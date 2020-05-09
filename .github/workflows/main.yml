@@ -23,6 +23,12 @@ jobs:
       run: |
         yarn build
         yarn export
+      env: 
+        AUTH_URL: ${{ secrets.AUTH_URL }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
+        ENDPOINT: ${{ secrets.ENDPOINT }}
 
     - name: S3 update
       uses: jakejarvis/s3-sync-action@master

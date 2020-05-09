@@ -19,6 +19,7 @@ export default function Home() {
       <Head>
         <title>TodoList3</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex" />
       </Head>
 
       <Main />
