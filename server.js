@@ -19,5 +19,7 @@ app.prepare().then(() => {
   }).listen(3000, (err) => {
     if (err) throw err
     console.log("> Ready on https://localhost:3000")
+    console.log(process.env.NODE_ENV)
+    console.log(process.env.AUTH_URL)
   })
 })
