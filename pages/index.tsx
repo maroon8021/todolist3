@@ -4,6 +4,7 @@ import Main from "c/top/main"
 import { Provider } from "c/top/context"
 /** @jsx jsx */
 import { css, jsx, Global } from "@emotion/core"
+import { Alert } from "c/top/alert"
 
 const pageGlobal = css`
   body {
@@ -21,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="noindex" />
       </Head>
-
+      <Alert />
       <Main />
     </Provider>
   )
