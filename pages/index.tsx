@@ -22,7 +22,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="noindex" />
       </Head>
-      <Alert />
       <Main />
     </Provider>
   )
