@@ -3,6 +3,7 @@ import { useEffect, FC } from "react"
 const MIN_SEC = 60000
 const TARGET_MIN = 50
 const MESSAGE = "50分になりました。"
+let timer = null
 
 const checkNotification = () => {
   if (window.Notification && Notification.permission !== "granted") {
@@ -23,7 +24,7 @@ const setTimer = () => {
   const diff = Math.abs(TARGET_MIN - nowSec)
   const fromNowSec =
     nowSec > TARGET_MIN ? (diff + TARGET_MIN) * MIN_SEC : diff * MIN_SEC
-  setTimeout(() => {
+  return setTimeout(() => {
     showNotification()
     alert(MESSAGE)
     setTimer()
@@ -32,8 +33,10 @@ const setTimer = () => {
 
 export const Alert: FC = () => {
   useEffect(() => {
-    checkNotification()
-    setTimer()
+    if (!timer) {
+      checkNotification()
+      timer = setTimer()
+    }
   }, [])
   return <></>
 }
