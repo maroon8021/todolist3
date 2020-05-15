@@ -78,7 +78,7 @@ const ContentPanel: FC = () => {
       <textarea
         css={textarea}
         placeholder="Todays todo"
-        defaultValue={content}
+        value={content}
         onBlur={onBlur}
         onChange={onChange}
       ></textarea>
